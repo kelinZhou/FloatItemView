@@ -10,6 +10,8 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.kelin.floatitemview.FloatItemView;
+
 import java.util.ArrayList;
 import java.util.List;
 
