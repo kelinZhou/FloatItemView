@@ -10,7 +10,6 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.kelin.floatitemview.FloatItemView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,17 +22,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        RecyclerView rvList = findViewById(R.id.rvList);
-        FloatItemView mSuspensionBar = findViewById(R.id.flItem);
-        rvList.setLayoutManager(new LinearLayoutManager(this));
+        RecyclerView recyclerView = findViewById(R.id.rvList);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
         items = loadData();
-        rvList.setAdapter(new FloatAdapter(items));
-        mSuspensionBar.attachToRecyclerView(rvList, R.layout.item_title_layout, new FloatItemView.DataBinding() {
-            @Override
-            public void onBind(@NonNull FloatItemView floatItemView, int position) {
-                ((TextView) floatItemView.findViewById(R.id.tvTitle)).setText((CharSequence) items.get(position));
-            }
-        });
+        recyclerView.setAdapter(new FloatAdapter(items));
+((FloatItemView)findViewById(R.id.flItem)).attachToRecyclerView(recyclerView, R.layout.item_title_layout, new FloatItemView.DataBinding() {
+    @Override
+    public void onBind(@NonNull FloatItemView floatItemView, int position) {
+        ((TextView) floatItemView.findViewById(R.id.tvTitle)).setText((CharSequence) items.get(position));
+    }
+});
     }
 
     @SuppressWarnings("unchecked")

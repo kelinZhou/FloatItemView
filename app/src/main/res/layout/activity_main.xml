@@ -4,15 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.kelin.floatitemdemo.MainActivity" >
-
+    <!--RecyclerView-->
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rvList"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <com.kelin.floatitemview.FloatItemView
+    <!--悬浮系统条目控件-->
+    <com.kelin.floatitemdemo.FloatItemView
         android:id="@+id/flItem"
-        android:background="#0ff"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 </RelativeLayout>

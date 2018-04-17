@@ -1,4 +1,4 @@
-package com.kelin.floatitemview;
+package com.kelin.floatitemdemo;
 
 import android.content.Context;
 import android.support.annotation.AttrRes;
